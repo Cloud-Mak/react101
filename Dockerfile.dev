@@ -1,0 +1,16 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+# RUN apk add --update npm
+
+COPY package.json .
+
+RUN npm install
+
+COPY . . 
+
+#RUN npm run build
+
+#tell image what to do when it starts  as container
+CMD ["npm","run", "start"]
